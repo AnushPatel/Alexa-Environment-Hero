@@ -1,7 +1,7 @@
 {
   "deploy_settings": {
     "default": {
-      "skill_id": "",
+      "skill_id": "amzn1.ask.skill.ede6f10e-92e1-41ab-990c-0fa33408dfcd",
       "was_cloned": false,
       "merge": {
         "manifest": {
@@ -11,6 +11,16 @@
                 "uri": "ask-adventure-game-default"
               }
             }
+          }
+        }
+      },
+      "resources": {
+        "manifest": {
+          "eTag": "cae94279b452c3ec57575083bace7cd3"
+        },
+        "interactionModel": {
+          "en-US": {
+            "eTag": "3beadb8ff162505f65edf81678bef7a1"
           }
         }
       }
