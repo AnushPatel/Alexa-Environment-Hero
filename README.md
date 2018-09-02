@@ -1,6 +1,7 @@
 #  Build An Alexa Gamebook Skill
 <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/alexa/alexa-skills-kit/tutorials/fact/header._TTH_.png" />
 
+[![icon-above-font.png](https://s8.postimg.cc/6sh3zf4n9/icon-above-font.png)](https://postimg.cc/image/50o54ila9/)
 
 This Alexa sample skill is a template for a basic gamebook skill. Provided with a branching text adventure from the Twine 2 platform, Alexa will let you play a game.
 
