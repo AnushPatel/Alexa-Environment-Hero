@@ -75,7 +75,7 @@ const handlers = {
     if (this.event.session.attributes['room'] === undefined) {
       // you just started so you are in the first room
       this.event.session.attributes['room'] = $twine[0]['$']['pid'];
-      speechOutput = `Welcome to ${story.replace('.html','')}. Lets start your game. `;
+      speechOutput = `Welcome to ${story.replace('.html','')},the story of an envrionmentally friendly lifetime! Stories will be told to you and you will have to make the right decisions. Lets start your game. `;
     }
 
     var room = currentRoom(this.event);
@@ -104,7 +104,7 @@ const handlers = {
       }
       if (reprompt === "") {
         if (!m[1].toLowerCase().startsWith('if you')) {
-          reprompt = "You can";
+          reprompt = "Do you";
         }
       } else {
         reprompt = `${reprompt} or`;
