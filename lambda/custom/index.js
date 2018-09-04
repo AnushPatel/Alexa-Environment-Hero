@@ -75,15 +75,7 @@ const handlers = {
     if (this.event.session.attributes['room'] === undefined) {
       // you just started so you are in the first room
       this.event.session.attributes['room'] = $twine[0]['$']['pid'];
-<<<<<<< HEAD
       speechOutput = `<audio src='https://s3.amazonaws.com/ask-soundlibrary/nature/amzn_sfx_strong_wind_whistling_01.mp3'/> Welcome to ${story.replace('.html','')},the story of an envrionmentally friendly lifetime! Stories will be told to you and you will have to make the right decisions. Lets start your game. `;
-=======
-      speechOutput = `Welcome to ${story.replace('.html','')},
-      the story of an envrionmentally friendly lifetime!
-       Stories will be told to you and you will have to
-       make the right decisions.
-       Lets start your game. `;
->>>>>>> 97ba13a1a2af7004db710c312ee7e75974c4657c
     }
 
     var room = currentRoom(this.event);
