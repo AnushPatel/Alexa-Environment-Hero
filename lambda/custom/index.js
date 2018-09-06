@@ -5,6 +5,11 @@ const story = 'Environment Hero.html';
 const TableName = null // story.replace('.html','').replace(/\s/g, "-");
 var $twine = null;
 const linksRegex = /\[\[([^\|\]]*)\|?([^\]]*)\]\]/g;
+var items = [
+  "In the great “Smog Disaster“, that happened in London in the year 1952, approximately four thousand people died in a few days due to the high concentrations of pollution.",
+  "Children contribute to only 10% of the world’s pollution but are prone to 40% of global disease."
+]
+var DidYouKnow = items[Math.floor(Math.random()*items.length)];
 
 module.exports.handler = (event, context, callback) => {
   console.log(`handler: ${JSON.stringify(event.request)}`);
@@ -34,10 +39,10 @@ module.exports.handler = (event, context, callback) => {
 const handlers = {
   'LaunchRequest': function() {
     console.log(`LaunchRequest`);
-    if (this.event.session.attributes['room'] !== undefined) {
+    if (Object.keys(this.attributes).length !== 0) {
       var room = currentRoom(this.event);
-      var speechOutput = `Hello, you were playing before and got to the room called ${room['$']['name']}. Would you like to resume? `;
-      var reprompt = `Say, resume game, or, new game.`;
+      var speechOutput = `<audio src='https://s3.amazonaws.com/ask-soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01.mp3'/> Hello. Great to see you back! Did you know that ` + DidYouKnow + ` . Just a statistic to keep in mind while you venture in the real world. You were playing before and got to the room called ${room['$']['name']}. Would you like to resume?`;
+      var reprompt = ` Say, resume game, or, new game.`;
       speechOutput = speechOutput + reprompt;
       var cardTitle = `Restart`;
       var cardContent = speechOutput;
@@ -234,6 +239,7 @@ const handlers = {
   'SessionEndedRequest': function() {
     // "exit", timeout or error. Cannot send back a response
     console.log(`Session ended: ${this.event.request.reason}`);
+    this.emit(':saveState', true);
   },
 };
 
