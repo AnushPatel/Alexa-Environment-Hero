@@ -25,7 +25,7 @@ module.exports.handler = (event, context, callback) => {
   const alexa = Alexa.handler(event, context);
   // APP_ID is your skill id which can be found in the Amazon developer console
   // where you create the skill. Optionally set as a Lamba environment variable.
-  alexa.appId = process.env.APP_ID;
+  process.env.APP_ID = alexa.appId;
   alexa.dynamoDBTableName = "EHTable";
   alexa.registerHandlers(handlers);
   alexa.execute();
