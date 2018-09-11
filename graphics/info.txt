@@ -1,0 +1,14 @@
+
+Hope you enjoy your new logo, here are the people that
+made your beautiful logo happen :)
+
+font name: vremenagroteskitalic
+font link: https://www.fontspring.com/fonts/abstrkt/vremena?utm_source=fontsquirrel.com&utm_medium=download_link&utm_campaign=vremena-grotesk#firstfreeproduct
+font author: ABSTRKT
+font author site: 
+
+icon designer: Chris Kerr
+icon designer link: /chrisk3rr
+        
+{"bg-gradient-0":"#5A5A2D","bg-gradient-1":"#0DE30D","icon":"#ffffff","font":"#ffffff"}
+      
