@@ -1,5 +1,7 @@
 'use strict';
-
+/*
+Write if statement where if "back to checkpoint" is said, it'll play a rewind sound effect
+*/
 const Alexa = require('alexa-sdk');
 const story = 'Environment Hero.html';
 const TableName = null // story.replace('.html','').replace(/\s/g, "-");
