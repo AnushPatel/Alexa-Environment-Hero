@@ -82,7 +82,7 @@ const handlers = {
     if (this.event.session.attributes['room'] === undefined) {
       // you just started so you are in the first room
       this.event.session.attributes['room'] = $twine[0]['$']['pid'];
-      speechOutput = `<audio src='https://s3.amazonaws.com/ask-soundlibrary/nature/amzn_sfx_strong_wind_whistling_01.mp3'/> Welcome to ${story.replace('.html','')},the story of an envrionmentally friendly lifetime! Stories will be told to you and you will have to make the right decisions. Lets start your game. `;
+      speechOutput = `<audio src='https://s3.amazonaws.com/ask-soundlibrary/nature/amzn_sfx_strong_wind_whistling_01.mp3'/> Welcome to ${story.replace('.html','')},the story of an envrionmentally friendly lifetime! Stories will be told to you and you will have to make the right decisions. For the best experience, play with your eyes closed and let your mind do the rest! Without further ado, lets start your game. `;
     }
 
     var room = currentRoom(this.event);
@@ -208,7 +208,7 @@ const handlers = {
     this.emit('CompletelyExit');
   },
   'CompletelyExit': function() {
-    var speechOutput = 'Goodbye.';
+    var speechOutput = 'Thanks for spending your precious time to become a better you. Please consider leaving a review on the app store: it means a lot!';
     if (TableName) {
       speechOutput = `Your progress has been saved. ${speechOutput}`;
     }
