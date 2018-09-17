@@ -17,8 +17,7 @@ var items = [
   "Almost 80% of urban waste in India is dumped in the river Ganges.",
   "There are more around 73 various kinds of pesticides in the groundwater, which is used as drinking water.",
   "House owners use chemicals that are 10 times more toxic per acre, than the amount used by the farmers.",
-  " In India, the Ganges water is gradually becoming septic, especially due to dumping of half burnt dead bodies and enshrouded babies.",
-  
+  "In India, the Ganges water is gradually becoming septic, especially due to dumping of half burnt dead bodies and enshrouded babies."
 ]
 var DidYouKnow = items[Math.floor(Math.random()*items.length)];
 
