@@ -9,15 +9,15 @@ var $twine = null;
 const linksRegex = /\[\[([^\|\]]*)\|?([^\]]*)\]\]/g;
 var items = [
   "In the great “Smog Disaster“, that happened in London in the year 1952, approximately four thousand people died in a few days due to the high concentrations of pollution.",
-  "Children contribute to only 10% of the world’s pollution but are prone to 40% of global disease."
-  "5000 people die every day as a result of drinking unclean water."
-  "People who live in high-density air pollution area, have 20% higher risk of dying from lung cancer, than people living in less polluted areas."
-  "United States produces 30% of the world’s waste and uses 25 % of the worlds natural resources"
-  "Children contribute to only 10% of the world’s pollution but are prone to 40% of global disease."
-  "Almost 80% of urban waste in India is dumped in the river Ganges."
-  "There are more around 73 various kinds of pesticides in the groundwater, which is used as drinking water."
-  "House owners use chemicals that are 10 times more toxic per acre, than the amount used by the farmers."
-  " In India, the Ganges water is gradually becoming septic, especially due to dumping of half burnt dead bodies and enshrouded babies."
+  "Children contribute to only 10% of the world’s pollution but are prone to 40% of global disease.",
+  "5000 people die every day as a result of drinking unclean water.",
+  "People who live in high-density air pollution area, have 20% higher risk of dying from lung cancer, than people living in less polluted areas.",
+  "United States produces 30% of the world’s waste and uses 25 % of the worlds natural resources",
+  "Children contribute to only 10% of the world’s pollution but are prone to 40% of global disease.",
+  "Almost 80% of urban waste in India is dumped in the river Ganges.",
+  "There are more around 73 various kinds of pesticides in the groundwater, which is used as drinking water.",
+  "House owners use chemicals that are 10 times more toxic per acre, than the amount used by the farmers.",
+  " In India, the Ganges water is gradually becoming septic, especially due to dumping of half burnt dead bodies and enshrouded babies.",
   
 ]
 var DidYouKnow = items[Math.floor(Math.random()*items.length)];
