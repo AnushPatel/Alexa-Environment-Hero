@@ -8,17 +8,17 @@ const TableName = 'EnvironmentHero' // story.replace('.html','').replace(/\s/g, 
 var $twine = null;
 const linksRegex = /\[\[([^\|\]]*)\|?([^\]]*)\]\]/g;
 var items = [
-  "In the great “Smog Disaster“, that happened in London in the year 1952, approximately four thousand people died in a few days due to the high concentrations of pollution",
-  "Children contribute to only 10% of the world’s pollution but are prone to 40% of global disease",
-  "5000 people die every day as a result of drinking unclean water",
-  "People who live in high-density air pollution area, have 20% higher risk of dying from lung cancer, than people living in less polluted areas",
+  "Children contribute to only 10% of the world’s pollution but are prone to 40% of global disease.",
+  "In the great Smog Disaster, that happened in London in the year 1952, approximately four thousand people died in a few days due to the high concentrations of pollution.",
+  "5000 people die every day as a result of drinking unclean water.",
+  "People who live in high-density air pollution area, have 20% higher risk of dying from lung cancer, than people living in less polluted areas.",
   "United States produces 30% of the world’s waste and uses 25 % of the worlds natural resources",
-  "Children contribute to only 10% of the world’s pollution but are prone to 40% of global disease",
-  "Almost 80% of urban waste in India is dumped in the river Ganges",
-  "There are more around 73 various kinds of pesticides in the groundwater, which is used as drinking water",
-  "House owners use chemicals that are 10 times more toxic per acre, than the amount used by the farmers",
-  "In India, the Ganges water is gradually becoming septic, especially due to dumping of half burnt dead bodies and enshrouded babies"
-];
+  "Children contribute to only 10% of the world’s pollution but are prone to 40% of global disease.",
+  "Almost 80% of urban waste in India is dumped in the river Ganges.",
+  "There are more around 73 various kinds of pesticides in the groundwater, which is used as drinking water.",
+  "House owners use chemicals that are 10 times more toxic per acre, than the amount used by the farmers.",
+  "In India, the Ganges water is gradually becoming septic, especially due to dumping of half burnt dead bodies and enshrouded babies."
+]
 var DidYouKnow = items[Math.floor(Math.random()*items.length)];
 
 module.exports.handler = (event, context, callback) => {
@@ -51,7 +51,7 @@ const handlers = {
     console.log(`LaunchRequest`);
     if (this.event.session.attributes["room"] !== undefined) {
       var room = currentRoom(this.event);
-      var speechOutput = `Hello. Great to see you back! Did you know that ` + DidYouKnow + ` . Just a statistic to keep in mind while you venture in the real world. Last time you got to the spot called ${room['$']['name']}. Would you like to resume?`;
+      var speechOutput = `<audio src='https://s3.amazonaws.com/ask-soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01.mp3'/> Hello. Great to see you back! Did you know that ` + DidYouKnow + ` . Just a statistic to keep in mind while you venture in the real world. Last time you got to the spot called ${room['$']['name']}. Would you like to resume?`;
       var reprompt = ` Say, resume game, or, new game.`;
       speechOutput = speechOutput + reprompt;
       var cardTitle = `Restart`;
@@ -61,8 +61,8 @@ const handlers = {
         "speak": speechOutput,
         "listen": reprompt,
         "card" : {
-          "title": cardTitle,
-          "content": cardContent,
+          "title": cardTitle.replace(/<audio [\s\S]*\/>/g, '' ),
+          "content": cardContent.replace(/<audio [\s\S]*\/>/g, '' ),
           "imageObj": imageObj
         }
       })}`);
@@ -90,7 +90,7 @@ const handlers = {
     if (Object.keys(this.attributes).length === 0) {
       // you just started so you are in the first room
       this.event.session.attributes['room'] = $twine[0]['$']['pid'];
-      speechOutput = ` Welcome to ${story.replace('.html','')},the story of an envrionmentally friendly lifetime! Stories will be told to you and you will have to make the right decisions. For the best experience, play with your eyes closed and let your mind do the rest! Without further ado, lets start your game. `;
+      speechOutput = `<audio src='https://s3.amazonaws.com/ask-soundlibrary/nature/amzn_sfx_strong_wind_whistling_01.mp3'/> Welcome to ${story.replace('.html','')},the story of an envrionmentally friendly lifetime! Stories will be told to you and you will have to make the right decisions. For the best experience, play with your eyes closed and let your mind do the rest! Without further ado, lets start your game. `;
     }
 
     var room = currentRoom(this.event);
