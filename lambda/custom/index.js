@@ -52,7 +52,7 @@ const handlers = {
     if (this.event.session.attributes["room"] !== undefined) {
       var room = currentRoom(this.event);
       var speechOutput = `<audio src='https://s3.amazonaws.com/ask-soundlibrary/ui/gameshow/amzn_ui_sfx_gameshow_tally_positive_01.mp3'/> Hello. Great to see you back! Did you know that ` + DidYouKnow + ` . Just a statistic to keep in mind while you venture in the real world. Last time you got to the spot called ${room['$']['name']}. Would you like to resume?`;
-      var reprompt = ` Say, resume game, or, new game.`;
+      var reprompt = ` Say, resume game to get back to the action!`;
       speechOutput = speechOutput + reprompt;
       var cardTitle = `Restart`;
       var cardContent = speechOutput;
